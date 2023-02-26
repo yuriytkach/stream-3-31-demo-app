@@ -1,0 +1,48 @@
+plugins {
+    id 'java-library'
+    id 'org.web3j' version '4.9.4'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+group 'com.yuriytkach.blockchain'
+version '0.0.1'
+
+dependencies {
+    implementation "org.web3j:core:4.9.4"
+}
+
+web3j {
+    generatedPackageName = "${group}.contracts"
+}
+
+solidity {
+    allowPaths = ["$projectDir/contracts"]
+}
+
+sourceSets.main.solidity.srcDir "$projectDir/contracts"
+
+task sourcesJar(type: Jar) {
+    from "$buildDir/generated/source/web3j/main/java"
+    archiveClassifier = 'sources'
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    archiveClassifier = 'javadoc'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+        }
+    }
+}
+
