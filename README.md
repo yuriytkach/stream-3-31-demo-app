@@ -1,6 +1,7 @@
-# Demo Project for Online Stream #3 (31) - Smart contract deployment into test blockchain
-Demo project for online stream #3 (31) about using Truffle to compile and deploy smart contracts
+# Demo Project for Online Stream #3 and #4 (#31 and #32) - Smart contract deployment into test blockchain
+Demo project for online stream #3 and #4 of blockchain course (#31 and #32 of total streams) about using Truffle to compile and deploy smart contracts
 to Ganache - a testing in-memory blockchain.
+Stream #4 added ability to compile smart-contract and create Java wrappers with web3j library.
 
 ## Access to Online Stream on YouTube
 
@@ -72,6 +73,13 @@ Summary
 Take a note of the `contract address` of the `FundraiserFactory` contract. Use it to call method to create `Fundraiser`.
 For this use can use the online IDE [Remix](https://remix.ethereum.org/).
 
+### Compile Java Wrappers
+To compine Java code wrappers for smart contracts and create jar with them use:
+
+```shell
+./gradlew jar
+```
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
@@ -80,4 +88,4 @@ For further reference, please consider the following sections:
 * [Truffle Tutorial for Simple DApp](https://trufflesuite.com/guides/pet-shop/)
 * [Ganache](https://trufflesuite.com/docs/ganache/)
 * [Ethereum Official Documentation](https://ethereum.org/uk/developers/docs/intro-to-ethereum/)
-
+* [Web3j Quickstart](https://docs.web3j.io/4.8.7/quickstart/)
